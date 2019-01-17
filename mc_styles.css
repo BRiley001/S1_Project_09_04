@@ -4,3 +4,20 @@
 
     filename: mc_styles.css
 */
+
+html {
+    background-color: aliceblue;
+}
+
+header {
+    background: url(mc_logo.png) right no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 200px;
+}
+
+nav {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+}

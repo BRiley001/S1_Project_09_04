@@ -4,3 +4,26 @@
 
     filename: mc_forms.css
 */
+
+label,
+input {
+    display: block;
+    font-size: 1.1em;
+}
+
+label {
+    text-align: center;
+}
+
+div.row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: 5px 0px;
+}
+
+fieldset {
+    width: 45%;
+    display: inline-block;
+}

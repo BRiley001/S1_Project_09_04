@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <!-- 
@@ -7,4 +8,126 @@
 
         filename: index.html
      -->
+    <title>Millenium Computer Order Form</title>
+    <link rel="stylesheet" href="mc_forms.css" />
+    <link rel="stylesheet" href="mc_styles.css" />
+    <script src="mc_script.js"></script>
 </head>
+
+<body>
+    <header></header>
+    <nav><a href="#">Go Back </a></nav>
+    <section>
+        <form action="" method="POST">
+            <fieldset id="custInfo">
+                <legend>Personal Information (Required *)</legend>
+                <div class="row">
+                    <label for="fName">First Name*</label>
+                    <input name="fName" id="fName" type="text" required>
+                </div>
+                <div class="row">
+                    <label for="lName">Last Name*</label>
+                    <input name="lName" id="lName" type="text" required>
+                </div>
+                <div class="row">
+                    <label for="custStreet">Street*</label>
+                    <input name="street" id="custStreet" type="text" required>
+                </div>
+                <div class="row">
+                    <label for="custCity">City*</label>
+                    <input name="city" id="custCity" type="text" required>
+                </div>
+                <div class="row">
+                    <label for="custState">State*</label>
+                    <input name="state" id="custState" type="text" required>
+                </div>
+                <div class="row">
+                    <label for="custZip">Zip code/Postal code*</label>
+                    <input name="zip" id="custZip" type="text" pattern="^\d{5}(-\d{4})?$" placeholder="nnnnn (-nnnn)"
+                        required>
+                </div>
+                <div class="row">
+                    <label for="custPhone">Phone</label>
+                    <input name="phone" id="custPhone" type="tel" pattern="”^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                        placeholder="(nnn) nnn-nnnn">
+                </div>
+            </fieldset>
+            <fieldset id="cpuInfo">
+                <legend>Computer Information</legend>
+
+                <div class="row">
+                    <label for="pSpeed">Processor Speed</label>
+                    <select name="pSpeed" id="pSpeed">
+                        <option value="">3.2GHz</option>
+                        <option value="">4.0GHz</option>
+                        <option value="">5.2GHz</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="mem">Memory</label>
+                    <select name="mem" id="mem">
+                        <option value="">1GB</option>
+                        <option value="">2GB</option>
+                        <option value="">4GB</option>
+                        <option value="">8GB</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="monitor">Monitor</label>
+                    <select name="monitor" id="monitor">
+                        <option value="">15"</option>
+                        <option value="">17"</option>
+                        <option value="">19"</option>
+                        <option value="">21"</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="hd">Hard drive</label>
+                    <select name="hd" id="hd">
+                        <option value="">240 GB</option>
+                        <option value="">500 GB</option>
+                        <option value="">750GB</option>
+                        <option value="">1 TB</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="">DVD Burner</label>
+                    <fieldset>
+                        <label for="dYes">Yes</label>
+                        <input type="radio" id="dYes" name="dvd">
+                        <label for="dNo">No</label>
+                        <input type="radio" id="dNo" name="dvd">
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <label for="">Tuner Card</label>
+                    <fieldset>
+                        <label for="tYes">Yes</label>
+                        <input type="radio" id="tYes" name="tuner">
+                        <label for="tNo">No</label>
+                        <input type="radio" id="tNo" name="tuner">
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <label for="">Media Card Reader</label>
+                    <fieldset>
+                        <label for="mYes">Yes</label>
+                        <input type="radio" id="mYes" name="mcard">
+                        <label for="mNo">No</label>
+                        <input type="radio" id="mNo" name="mcard">
+                    </fieldset>
+                </div>
+
+            </fieldset>
+        </form>
+    </section>
+
+</body>
+
+</html>
