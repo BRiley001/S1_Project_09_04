@@ -17,6 +17,8 @@
 <body>
     <header></header>
     <nav><a href="#">Go Back </a></nav>
+    <h1>Order Form</h1>
+    <p>Please fill out the form below, and we will get you your new computer in 5-7 business days. </p>
     <section>
         <form action="" method="POST">
             <fieldset id="custInfo">
@@ -39,7 +41,7 @@
                 </div>
                 <div class="row">
                     <label for="custState">State*</label>
-                    <input name="state" id="custState" type="text" required>
+                    <input name="state" id="custState" type="text" placeholder="AZ, NY, MN, WY" required>
                 </div>
                 <div class="row">
                     <label for="custZip">Zip code/Postal code*</label>
@@ -48,7 +50,7 @@
                 </div>
                 <div class="row">
                     <label for="custPhone">Phone</label>
-                    <input name="phone" id="custPhone" type="tel" pattern="”^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                    <input name="phone" id="custPhone" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                         placeholder="(nnn) nnn-nnnn">
                 </div>
             </fieldset>
@@ -56,7 +58,7 @@
                 <legend>Computer Information</legend>
 
                 <div class="row">
-                    <label for="pSpeed">Processor Speed</label>
+                    <label for="pSpeed">Processor Speed*</label>
                     <select name="pSpeed" id="pSpeed">
                         <option value="">3.2GHz</option>
                         <option value="">4.0GHz</option>
@@ -65,7 +67,7 @@
                 </div>
 
                 <div class="row">
-                    <label for="mem">Memory</label>
+                    <label for="mem">Memory*</label>
                     <select name="mem" id="mem">
                         <option value="">1GB</option>
                         <option value="">2GB</option>
@@ -75,7 +77,7 @@
                 </div>
 
                 <div class="row">
-                    <label for="monitor">Monitor</label>
+                    <label for="monitor">Monitor*</label>
                     <select name="monitor" id="monitor">
                         <option value="">15"</option>
                         <option value="">17"</option>
@@ -85,7 +87,7 @@
                 </div>
 
                 <div class="row">
-                    <label for="hd">Hard drive</label>
+                    <label for="hd">Hard drive*</label>
                     <select name="hd" id="hd">
                         <option value="">240 GB</option>
                         <option value="">500 GB</option>
@@ -95,36 +97,45 @@
                 </div>
 
                 <div class="row">
-                    <label for="">DVD Burner</label>
+                    <label>DVD Burner*</label>
                     <fieldset>
                         <label for="dYes">Yes</label>
-                        <input type="radio" id="dYes" name="dvd">
+                        <input type="radio" id="dYes" value="yes" name="dvd" required>
                         <label for="dNo">No</label>
-                        <input type="radio" id="dNo" name="dvd">
+                        <input type="radio" id="dNo" value="no" name="dvd" required>
                     </fieldset>
                 </div>
 
                 <div class="row">
-                    <label for="">Tuner Card</label>
+                    <label>Tuner Card*</label>
                     <fieldset>
                         <label for="tYes">Yes</label>
-                        <input type="radio" id="tYes" name="tuner">
+                        <input type="radio" id="tYes" value="yes" name="tuner" required>
                         <label for="tNo">No</label>
-                        <input type="radio" id="tNo" name="tuner">
+                        <input type="radio" id="tNo" value="no" name="tuner" required>
                     </fieldset>
                 </div>
 
                 <div class="row">
-                    <label for="">Media Card Reader</label>
-                    <fieldset>
+                    <label>Media Card Reader*</label>
+                    <fieldset required>
                         <label for="mYes">Yes</label>
-                        <input type="radio" id="mYes" name="mcard">
+                        <input type="radio" id="mYes" value="yes" name="mcard" required>
                         <label for="mNo">No</label>
-                        <input type="radio" id="mNo" name="mcard">
+                        <input type="radio" id="mNo" value="no" name="mcard" required>
                     </fieldset>
                 </div>
 
+                <input name="24warranty" id="warranty" value="yes" type="checkbox">
+                <label for="24warranty">Would you like a 24-month extended warranty?</label>
             </fieldset>
+            <div id="buttons">
+                <input type="submit" value="Send Order">
+                <input type="reset" value="Cancel Order">
+                <input type="button" onclick="" value="Contact Me">
+            </div>
+
+
         </form>
     </section>
 

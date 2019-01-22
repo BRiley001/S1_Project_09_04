@@ -7,7 +7,6 @@
 
 label,
 input {
-    display: block;
     font-size: 1.1em;
 }
 
@@ -23,7 +22,80 @@ div.row {
     margin: 5px 0px;
 }
 
+div.row>* {
+    -webkit-flex: 1 1 500px;
+    flex: 1 1 500px;
+}
+
 fieldset {
-    width: 45%;
+    width: 49%;
     display: inline-block;
+    box-sizing: border-box;
+}
+
+legend {
+    background-color: rgb(81, 160, 233);
+    border: 1px solid black;
+}
+
+fieldset#custInfo {
+    font-size: 1.2115em;
+    height: 500px;
+    background-color: rgb(206, 198, 153);
+    border-radius: 25px;
+}
+
+fieldset#cpuInfo {
+    font-size: 1em;
+    height: 500px;
+    background-color: rgb(214, 206, 160);
+    border-radius: 25px;
+    margin-top: 5px;
+}
+
+div#buttons {
+    text-align: center;
+}
+
+div#buttons>input {
+    margin: 5px 15px;
+}
+
+
+
+input#fName:focus,
+input#lName:focus,
+input#custStreet:focus,
+input#custCity:focus,
+input#custState:focus,
+input#custZip:focus,
+input#custPhone:focus {
+    background-color: rgb(140, 140, 194);
+}
+
+input#fName:focus:valid,
+input#lName:focus:valid,
+input#custStreet:focus:valid,
+input#custCity:focus:valid,
+input#custState:focus:valid,
+input#custZip:focus:valid,
+input#custPhone:focus:valid {
+    background: rgb(150, 220, 150) url(mc_go.png) right/contain no-repeat;
+}
+
+input#fName:focus:invalid,
+input#lName:focus:invalid,
+input#custStreet:focus:invalid,
+input#custCity:focus:invalid,
+input#custState:focus:invalid,
+input#custZip:focus:invalid,
+input#custPhone:focus:invalid {
+    background: rgb(230, 100, 100) url(mc_stop.png) right/contain no-repeat;
+}
+
+@media only screen and (max-width: 650px) {
+    fieldset {
+        display: block;
+        width: 100%;
+    }
 }
