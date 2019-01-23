@@ -5,32 +5,24 @@
     filename: mc_styles.css
 */
 
+/* The entire page has a blue background */
 html {
     background-color: aliceblue;
 }
 
-header {
-    background: url(mc_logo.png) right no-repeat;
-    background-size: 100%;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex: 1 1 150px;
-    flex: 1 1 150px;
-    height: 100px;
-}
-
-nav {
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
-}
-
+/* The 'Order Form' at the top of the page is a larger font, centerd, and underlined */
 h1 {
     font-size: 3.5em;
     text-align: center;
     text-decoration: underline;
 }
 
+/* The text below the h1 is centered */
 p {
     text-align: center;
+}
+
+/* The logo goes across the page */
+img#logo {
+    width: 100%;
 }

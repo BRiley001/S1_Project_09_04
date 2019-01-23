@@ -5,15 +5,18 @@
     filename: mc_forms.css
 */
 
+/* Labels and inputs have larger fonts */
 label,
 input {
     font-size: 1.1em;
 }
 
+/* all fonts are centered */
 label {
     text-align: center;
 }
 
+/* All divs that are rows are rows that flex as the page grows and shrinks */
 div.row {
     display: -webkit-flex;
     display: flex;
@@ -22,47 +25,65 @@ div.row {
     margin: 5px 0px;
 }
 
+/* All nested elements within row divs will flex with the page */
 div.row>* {
-    -webkit-flex: 1 1 500px;
-    flex: 1 1 500px;
+    -webkit-flex: 1 1 400px;
+    flex: 1 1 400px;
 }
 
+/* fieldsets will take up 49% of the page (50% made the field sets shift weirdly, despite the boxes being total size, not additive) */
 fieldset {
     width: 49%;
     display: inline-block;
     box-sizing: border-box;
 }
 
+/* the legends have a blue background with a border */
 legend {
     background-color: rgb(81, 160, 233);
     border: 1px solid black;
 }
 
+/* The first field set has sized text, a set height, and a yellowish-brownish background with curved edges */
 fieldset#custInfo {
-    font-size: 1.2115em;
-    height: 500px;
+    font-size: 1.705em;
+    height: 650px;
     background-color: rgb(206, 198, 153);
     border-radius: 25px;
 }
 
+/* The second fieldset has regular text, a set height, close to the same background as the first set, curved borders, and to make it look beter when shrunk, slightly spaced from the first set */
 fieldset#cpuInfo {
     font-size: 1em;
-    height: 500px;
+    height: 650px;
     background-color: rgb(214, 206, 160);
     border-radius: 25px;
     margin-top: 5px;
 }
 
+/* The label for the textarea is on its own line, and is below the other fields */
+label#addInfo {
+    display: block;
+    margin-top: 17px;
+}
+
+/* The text area box spans the field, and has a set height (which can be messed with which causes a weird offset errot to occur */
+textarea {
+    width: 95%;
+    height: 100px;
+}
+
+/* the bottom buttons are centered */
 div#buttons {
     text-align: center;
 }
 
+/* The buttons are spaced out to make them look better */
 div#buttons>input {
     margin: 5px 15px;
 }
 
-
-
+/* only the inputs from the left side (the text inputs), while focused on, have a blueish background to make it more appealing to the user */
 input#fName:focus,
 input#lName:focus,
 input#custStreet:focus,
@@ -73,6 +94,7 @@ input#custPhone:focus {
     background-color: rgb(140, 140, 194);
 }
 
+/* Whenever the focused field is also valid, it will tuen green and have a checkmark on the right */
 input#fName:focus:valid,
 input#lName:focus:valid,
 input#custStreet:focus:valid,
@@ -83,6 +105,7 @@ input#custPhone:focus:valid {
     background: rgb(150, 220, 150) url(mc_go.png) right/contain no-repeat;
 }
 
+/* Whenever a field is both focused on and does not have valid data, it turns red and has an X on the right */
 input#fName:focus:invalid,
 input#lName:focus:invalid,
 input#custStreet:focus:invalid,
@@ -93,6 +116,7 @@ input#custPhone:focus:invalid {
     background: rgb(230, 100, 100) url(mc_stop.png) right/contain no-repeat;
 }
 
+/* Whenever the screen is below the set width, the field sets are blocks that span the page */
 @media only screen and (max-width: 650px) {
     fieldset {
         display: block;

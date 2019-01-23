@@ -15,14 +15,22 @@
 </head>
 
 <body>
-    <header></header>
+    <!-- The image goes across the page -->
+    <img id="logo" src="mc_logo.png" alt="">
+    <!-- The nav exists entirely to link back to a previous page (which does not exist)-->
     <nav><a href="#">Go Back </a></nav>
+    <!-- The h1 just says that it is an order form, with the tag below giving simple instructions for the form. -->
     <h1>Order Form</h1>
     <p>Please fill out the form below, and we will get you your new computer in 5-7 business days. </p>
+    <!-- The section contains the form -->
     <section>
-        <form action="" method="POST">
+        <!-- The form creates a form, which because of the POST method, will receive data -->
+        <form name="cForm" action=" http://www.mill_computers.com/orders/process.cgi" method="POST">
+            <!-- field sets are groups of fields, to make them easier to sort through -->
             <fieldset id="custInfo">
+                <!-- The legend appears above the fieldset, to describe the fieldset -->
                 <legend>Personal Information (Required *)</legend>
+                <!-- Any div in the 'row' class has CSS apply to it, so that it only applies to the correct fields. The label is text that usually says what should go in the field. The input is the field -->
                 <div class="row">
                     <label for="fName">First Name*</label>
                     <input name="fName" id="fName" type="text" required>
@@ -50,52 +58,57 @@
                 </div>
                 <div class="row">
                     <label for="custPhone">Phone</label>
+                    <!-- The name says the name of the input, the id allows it to be selected, the type affects the selection method or keyboard, the pattern checks to make sure the data is valid. The placeholer creates lighter text that disapears when data is entered in the field -->
                     <input name="phone" id="custPhone" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                         placeholder="(nnn) nnn-nnnn">
                 </div>
             </fieldset>
+            <!-- This is another fieldset, this one goes off to the right of the other fieldset due to CSS -->
             <fieldset id="cpuInfo">
                 <legend>Computer Information</legend>
 
+                <!-- This is just sets of labels and fields for computer part options, which has a selection list, allowing an option to be picked from set options -->
                 <div class="row">
                     <label for="pSpeed">Processor Speed*</label>
+                    <!-- The select list works like a regular input, except it creates a list with options to choose from.  -->
                     <select name="pSpeed" id="pSpeed">
-                        <option value="">3.2GHz</option>
-                        <option value="">4.0GHz</option>
-                        <option value="">5.2GHz</option>
+                        <option value="3.2GHz">3.2GHz</option>
+                        <option value="4.0GHz">4.0GHz</option>
+                        <option value="5.2GHz">5.2GHz</option>
                     </select>
                 </div>
 
                 <div class="row">
                     <label for="mem">Memory*</label>
                     <select name="mem" id="mem">
-                        <option value="">1GB</option>
-                        <option value="">2GB</option>
-                        <option value="">4GB</option>
-                        <option value="">8GB</option>
+                        <option value="1GB">1GB</option>
+                        <option value="2GB">2GB</option>
+                        <option value="4GB">4GB</option>
+                        <option value="8GB">8GB</option>
                     </select>
                 </div>
 
                 <div class="row">
                     <label for="monitor">Monitor*</label>
                     <select name="monitor" id="monitor">
-                        <option value="">15"</option>
-                        <option value="">17"</option>
-                        <option value="">19"</option>
-                        <option value="">21"</option>
+                        <option value="15">15"</option>
+                        <option value="17">17"</option>
+                        <option value="19">19"</option>
+                        <option value="21">21"</option>
                     </select>
                 </div>
 
                 <div class="row">
                     <label for="hd">Hard drive*</label>
                     <select name="hd" id="hd">
-                        <option value="">240 GB</option>
-                        <option value="">500 GB</option>
-                        <option value="">750GB</option>
-                        <option value="">1 TB</option>
+                        <option value="240GB">240 GB</option>
+                        <option value="500GB">500 GB</option>
+                        <option value="750GB">750 GB</option>
+                        <option value="1TB">1 TB</option>
                     </select>
                 </div>
 
+                <!-- This set of divs is labels and inputs with radio buttons, which are buttons that are one of the options, usually when it is a yes or no option. This has yes or no to various computer parts. -->
                 <div class="row">
                     <label>DVD Burner*</label>
                     <fieldset>
@@ -126,9 +139,14 @@
                     </fieldset>
                 </div>
 
+                <!-- This is a checkmark option, which creates a box that is either selected or not. -->
                 <input name="24warranty" id="warranty" value="yes" type="checkbox">
                 <label for="24warranty">Would you like a 24-month extended warranty?</label>
+                <br />
+                <label id="addInfo" for="addInfo">Any additional information?</label>
+                <textarea name="addInfo" id="addInfo" cols="30" rows="10"></textarea>
             </fieldset>
+            <!-- The buttons that submit, reset, and execute a command are below. The submit will submit the data, while the reset clears the fields, whereas the command is supposed to allow contact, however it does not work. -->
             <div id="buttons">
                 <input type="submit" value="Send Order">
                 <input type="reset" value="Cancel Order">
